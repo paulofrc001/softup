@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --sidebar-w-mobile: min(88vw, 320px);
+  --sidebar-w-desktop: clamp(240px, 18.5vw, 300px);
+}
+
+/* Suporte de Alta Resolução / Retina / HiDPI / 2K / 4K */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  img, svg {
+    shape-rendering: geometricPrecision;
+    text-rendering: geometricPrecision;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Layout fluido para sidebar e conteúdo */
+.sidebar-container {
+  width: var(--sidebar-w-mobile);
+}
+
+@media (min-width: 1024px) {
+  .sidebar-container {
+    width: var(--sidebar-w-desktop);
+  }
+  .main-layout-content {
+    padding-left: var(--sidebar-w-desktop);
+  }
+}
+
+/* Scrollbar moderna, fina e discreta para tema escuro */
+.sidebar-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 116, 139, 0.45) transparent;
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.4);
+  border-radius: 9999px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(129, 140, 248, 0.65);
+}

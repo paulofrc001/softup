@@ -1,0 +1,6 @@
+{
+  "name": "Gestão & Gargalos de Implantação",
+  "description": "Dashboard interativo de monitoramento de demandas em andamento, controle de evolução semanal e diagnóstico de gargalos operacionais por etapa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
